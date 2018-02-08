@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--
+    This is the root template for all views in CutCash. It loads our global stylesheet and fonts, contains sections for
+    style overrides, scripts, and content.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="description"
+          content="CuteKitchen - Grocery lists and recipes">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon57.png') }}" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon57.png') }}"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='icon72.png') }}"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='icon114.png') }}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='icon144.png') }}" />
+
+    <!-- Framework and application style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bin/bulma.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bin/cutekitchen.css') }}">
+    <!-- / -->
+
+    <!-- Icon font and Google fonts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+
+    <!-- / -->
+
+    <!-- Template styles -->
+    {% block styles %}{% endblock %}
+    <!-- / -->
+
+    <!-- JS frameworks and custom JS to run on every page -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- / -->
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<!-- Template header -->
+{% block header %}{% endblock %}
+<!-- / -->
+
+<!-- Template body -->
+{% block body %}{% endblock %}
+<!-- / -->
+
+<!-- Template footer -->
+{% block footer %}{% endblock %}
+<!-- / -->
+
+<!-- Template scripts -->
+{% block scripts %}{% endblock %}
+<!-- / -->
+
+</body>
+</html>
