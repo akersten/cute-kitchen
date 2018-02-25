@@ -20,6 +20,12 @@ a {
 //#endregion
 
 
+/* Main title should use a fancy font. */
+.hero .title {
+  font-family: "Pacifico", sans-serif;
+}
+
+
 
 body, section.section {
   background-color: $cutekitchen-light;

@@ -10,7 +10,7 @@ def splash():
     The splash screen for the CuteKitchen homepage.
     :return: The rendered template.
     """
-    return generic_path_render("splash/splash.html")
+    return generic_path_render("outside/splash/splash.html")
 
 
 def app():
