@@ -11,6 +11,12 @@ html {
   background-color: $cutekitchen-black; /* For pages that aren't long enough, don't have a bright white background. */
 }
 
+/* The Bulma $link variable is used for form highlight, which we want to be the primary accent color. But for actual
+ * links, it's too hard to read. */
+a {
+  color: $cutekitchen-primary;
+}
+
 //#endregion
 
 
@@ -29,17 +35,17 @@ body, section.section {
   color: $cutekitchen-light;
   font-size: 0.9rem;
 
-  a {
-    color: $cutekitchen-primary-accent;
-  }
-
   .title, .subtitle {
     color: $cutekitchen-light; /* Need the color set here too, .title has a color property. */
     font-size: 1.25rem;
   }
 
-  /* Reset size for the icons in the footer, they don't look right at 0.9rem. */
-  a.icon {
-    font-size: 1rem;
+  a {
+    color: $cutekitchen-primary-accent; /* The accent color is ok in the footer for links. */
+
+    /* Reset size for the icons in the footer, they don't look right at 0.9rem. */
+    .icon {
+      font-size: 1rem;
+    }
   }
 }
