@@ -1,10 +1,10 @@
 from flask import Flask
 
-from src import route
+from src.router.routes import init_all_routes
 
 app = Flask(__name__)
 
-route.init_routes(app)
+init_all_routes(app)
 
 if __name__ == '__main__':
     app.run()

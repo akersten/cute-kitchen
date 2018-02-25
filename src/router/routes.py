@@ -4,15 +4,15 @@
 
 from flask import Flask
 
-import route
-import route.authentication
+from . import init_routes
+from . import authentication
 
 
-def init_routes(flask_app: Flask) -> None:
+def init_all_routes(flask_app: Flask) -> None:
     """
     Sets up the application routes on the Flask object by looking into each area package's __init__.py and running its
     route initialization.
     :param flask_app: The Flask application.
     """
-    route.init_routes(flask_app)
-    route.authentication.init_routes(flask_app)
+    init_routes(flask_app)
+    authentication.init_routes(flask_app)

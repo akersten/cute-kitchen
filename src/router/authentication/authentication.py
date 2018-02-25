@@ -3,13 +3,14 @@
 # user session yet.
 # ######################################################################################################################
 
+from ..generic import generic_path_render
 
 def login():
     pass
 
 
 def register():
-    pass
+    return generic_path_render("authentication/register/register.html")
 
 
 def logout():
