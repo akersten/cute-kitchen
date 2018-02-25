@@ -8,3 +8,14 @@
 body, section.section {
   background-color: $cutekitchen-light;
 }
+
+
+/* Color should be white in the footer and titles should be smaller. */
+.footer {
+  color: $cutekitchen-light;
+
+  .title, .subtitle {
+    color: $cutekitchen-light; /* Need the color set here too, .title has a color property. */
+    font-size: 1.25rem;
+  }
+}
