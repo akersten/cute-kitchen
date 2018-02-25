@@ -5,10 +5,19 @@
 
 @import "cutekitchen-variables";
 
+//#region Page-level styles
+
+html {
+  background-color: $cutekitchen-black; /* For pages that aren't long enough, don't have a bright white background. */
+}
+
+//#endregion
+
+
+
 body, section.section {
   background-color: $cutekitchen-light;
 }
-
 
 /* Default text content (other than headers) should use the serif font. */
 .content {
@@ -19,6 +28,10 @@ body, section.section {
 .footer {
   color: $cutekitchen-light;
   font-size: 0.9rem;
+
+  a {
+    color: $cutekitchen-primary-accent;
+  }
 
   .title, .subtitle {
     color: $cutekitchen-light; /* Need the color set here too, .title has a color property. */
