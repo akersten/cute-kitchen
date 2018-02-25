@@ -14,12 +14,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Icon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='icon57.png') }}" />
+    <!-- Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon57.png') }}"/>
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon57.png') }}"/>
     <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='icon72.png') }}"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='icon114.png') }}" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='icon144.png') }}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='icon114.png') }}"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='icon144.png') }}"/>
+    <!-- / -->
 
     <!-- Framework and application style -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bin/bulma.css') }}">
@@ -27,11 +28,10 @@
     <!-- / -->
 
     <!-- Icon font and Google fonts -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bin/fontawesome-all.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
-
     <!-- / -->
 
     <!-- Template styles -->
@@ -43,6 +43,11 @@
     <!-- / -->
 
     <title>{% block title %}{% endblock %}</title>
+
+    <!-- Template head -->
+    {% block head %}{% endblock %}
+    <!-- / -->
+
 </head>
 <body>
 

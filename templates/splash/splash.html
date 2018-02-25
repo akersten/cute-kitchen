@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}CuteKitchen{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bin/route/splash.css') }}">
+{% endblock %}
+
+{% block header %}
+    {% include "splash/splash-header.html" %}
+{% endblock %}
+
+{% block body %}
+    {% include "splash/splash-body.html" %}
+{% endblock %}
+
+{% block footer %}
+    {% include "splash/splash-footer.html" %}
+{% endblock %}
