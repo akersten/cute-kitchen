@@ -13,8 +13,9 @@ then
     mkdir -p static/css/bin
 fi
 
-sass src/scss/bulma.scss static/css/bin/bulma.css
-sass src/scss/cutekitchen.scss static/css/bin/cutekitchen.css
+#sass src/scss/bulma.scss static/css/bin/bulma.css
+#sass src/scss/cutekitchen.scss static/css/bin/cutekitchen.css
+sass --update src/scss:static/css/bin
 
 echo "-----------------------------------------------------------------------------------"
 echo "Build complete - run 'python3 cute-kitchen.py' to start the server."
