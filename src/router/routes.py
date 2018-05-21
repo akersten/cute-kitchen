@@ -16,3 +16,4 @@ def init_all_routes(flask_app: Flask) -> None:
     """
     init_routes(flask_app)
     authentication.init_routes(flask_app)
+
