@@ -6,7 +6,7 @@
 from ..generic import generic_path_render
 
 def login():
-    pass
+    return generic_path_render("authentication/login/login.html")
 
 
 def register():
