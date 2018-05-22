@@ -2,7 +2,32 @@
 # Generic top-level routes like the splash screen.
 # ######################################################################################################################
 
-from flask import render_template
+from flask import render_template, abort, app, session
+
+from .annotations import get_route_business_logic
+from .context import get_request_context, get_request_session
+from ..business.security import run_endpoint_checks
+
+
+# #########
+# region Status code pages
+# #########
+
+def status_403():
+    return generic_path_render("error/403.html"), 403
+
+
+def status_404():
+    return generic_path_render("error/404.html"), 404
+
+
+def status_500():
+    return generic_path_render("error/500.html"), 500
+
+
+# #########
+# endregion
+# #########
 
 # #########
 # region Unauthenticated routes
@@ -39,6 +64,7 @@ def license():
     """
     return generic_path_render("outside/license/license.html")
 
+
 # #########
 # endregion
 # #########
@@ -56,9 +82,23 @@ def generic_path_render(file):
     return render_template(file)
 
 
-def generic_logic_render(viewFn, file):
-    
-    return
+def generic_logic_render(file, fn):
+    """
+    Renders the given template in the context of the calling function. The calling function should be an endpoint
+    decorated with annotations from the annotations file.
+    :param file: The filename to render.
+    :param fn: The endpoint we're rendering from.
+    :return: The rendered template for a page.
+    """
+    if not run_endpoint_checks(get_request_session(), get_request_context(), fn):
+        abort(403)
+
+    logic = get_route_business_logic(fn)
+    if logic is not None:
+        if not logic():
+            abort(500)
+
+    return render_template(file)
 
 # #########
 # endregion

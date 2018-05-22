@@ -14,3 +14,5 @@ def init_routes(flask_app: Flask):
     flask_app.add_url_rule("/privacy", "privacy", methods=["GET"], view_func=generic.privacy)
     flask_app.add_url_rule("/license", "license", methods=["GET"], view_func=generic.license)
     flask_app.add_url_rule("/terms", "terms", methods=["GET"], view_func=generic.terms)
+
+
