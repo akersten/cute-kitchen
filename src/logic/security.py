@@ -15,5 +15,8 @@ def user_attempt_login(username, password):
     if len(username) == 0 or len(password) == 0:
         return False
 
+    if username == "fail":
+        return False
+
     #TODO: Actually validate.
     return True

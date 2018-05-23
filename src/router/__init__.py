@@ -1,7 +1,10 @@
 # ######################################################################################################################
-# Everything in the router directory should be a  straightforward mapping from endpoint to logic. Anything that is
+# Everything in the router directory should be a straightforward mapping from endpoint to logic. Anything that is
 # more complex than one line (e.g. anything that needs logic beyond "render this template") should call out to the
-# router-logic package.
+# router-logic package as much as possible.
+#
+# Sometimes it may be necessary to have additional logic in the router (like redirecting already-logged-in users through
+# the login page) but logic should be kept to a minimum here.
 # ######################################################################################################################
 
 from flask import Flask

@@ -1,3 +1,5 @@
+from flask import flash
+
 from ..security import user_is_logged_in
 from ...logic.security import user_attempt_login
 
@@ -11,6 +13,7 @@ def login(session, g, request):
     password = request.form.get("input-password")
 
     if not user_attempt_login(username, password):
+        flash("bad username")
         return False
 
     session["username"] = username

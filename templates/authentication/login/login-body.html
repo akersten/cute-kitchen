@@ -11,15 +11,28 @@
                         </h1>
                     </header>
                     <div class="card-content">
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <ul class=flashes>
+                                    {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endwith %}
+
                         <form method="post">
                             <div class="field">
                                 <label class="label" for="input-username">Username</label>
-                                <input id="input-username" name="input-username" class="input" type="text" placeholder="e.g. alex" maxlength="20" required/>
+                                <input id="input-username" name="input-username" class="input" type="text"
+                                       placeholder="e.g. alex" maxlength="20" required/>
                             </div>
 
                             <div class="field">
                                 <label class="label" for="input-password">Password</label>
-                                <input id="input-password" name="input-password" class="input" type="password" maxlength="64" required/>
+                                <input id="input-password" name="input-password" class="input" type="password"
+                                       maxlength="64" required/>
                             </div>
 
                             <div class="field">
