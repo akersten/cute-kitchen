@@ -3,11 +3,12 @@
 # ######################################################################################################################
 
 from ..generic import generic_logic_render
-from ..annotations import route_login_required, route_business_logic
-from ...business.kitchen import kitchen
+from ..annotations import route_login_required, route_business_logic, route_vm_logic
+from ...controller.kitchen import kitchen
 
 @route_login_required()
 @route_business_logic(kitchen.home)
+@route_vm_logic(kitchen.home_vm)
 def home():
     return generic_logic_render("kitchen/home/home.html", home)
 
