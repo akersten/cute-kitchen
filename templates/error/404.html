@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>404</title>
-</head>
-<body>
-    404
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}CuteKitchen - Not Found{% endblock %}
+
+{% block head %}{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block styles %}{% endblock %}
+
+{% block header %}
+    {% include "outside/outside-header.html" %}
+{% endblock %}
+
+{% block body %}
+    {% include "error/404-body.html" %}
+{% endblock %}
+
+{% block footer %}
+    {% include "outside/outside-footer.html" %}
+{% endblock %}

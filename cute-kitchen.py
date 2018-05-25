@@ -16,6 +16,10 @@ def e403(e):
 def e404(e):
     return status_404()
 
+@app.errorhandler(500)
+def e500(e):
+    return status_500()
+
 app.secret_key = "DEBUG SECRET KEY, CHANGE BEFORE DEPLOYMENT"
 
 if __name__ == '__main__':

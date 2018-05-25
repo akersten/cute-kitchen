@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}CuteKitchen - Error{% endblock %}
 
-</body>
-</html>
+{% block head %}{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block styles %}{% endblock %}
+
+{% block header %}
+    {% include "outside/outside-header.html" %}
+{% endblock %}
+
+{% block body %}
+    {% include "error/500-body.html" %}
+{% endblock %}
+
+{% block footer %}
+    {% include "outside/outside-footer.html" %}
+{% endblock %}
