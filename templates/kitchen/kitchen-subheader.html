@@ -1,0 +1,43 @@
+{% macro kitchen_subheader(selectedIdx) %}
+
+    {% set btnRootClass = "button is-text is-large" %}
+    {% set btn1Class = btnRootClass %}
+    {% set btn2Class = btnRootClass %}
+    {% set btn3Class = btnRootClass %}
+
+    {% if selectedIdx == 1 %}
+        {% set btn1Class = [btn1Class," is-primary"]|join %}
+    {% elif selectedIdx == 2 %}
+        {% set btn2Class = [btn2Class," is-primary"]|join %}
+    {% elif selectedIdx == 3 %}
+        {% set btn3Class = [btn3Class," is-primary"]|join %}
+    {% endif %}
+
+    <div class="buttons has-addons">
+        <span class="{{ btn1Class }}">
+            <span class="icon">
+                <i class="fas fa-list"></i>
+            </span>
+            <span>
+                Shopping List
+            </span>
+        </span>
+        <span class="{{ btn2Class }}">
+            <span class="icon">
+                <i class="fas fa-box"></i>
+            </span>
+            <span>
+                Pantry
+            </span>
+        </span>
+        <span class="{{ btn3Class }}">
+            <span class="icon">
+                <i class="fas fa-user-friends"></i>
+            </span>
+            <span>
+                Friends
+            </span>
+        </span>
+    </div>
+
+{% endmacro %}

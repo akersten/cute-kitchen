@@ -1,0 +1,10 @@
+{% import "kitchen/kitchen-header.html" as m_kh %}
+{% import "kitchen/kitchen-subheader.html" as m_ksh %}
+
+{{ m_kh.kitchen_header("Home", vm.username) }}
+<section class="section">
+    <div class="container">
+        {{ m_ksh.kitchen_subheader(2) }}
+
+    </div>
+</section>

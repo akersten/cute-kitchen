@@ -1,32 +1,28 @@
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="{{ url_for("splash") }}">
-            <h2 class="title has-text-light">CuteKitchen</h2>
-        </a>
+{% macro kitchen_header(pageTitle, username) %}
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ url_for("splash") }}">
+                <h2 class="title has-text-light">CuteKitchen</h2>
+            </a>
 
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item">
-                    Home
-                </a>
-            </div>
-
-            <div class="navbar-end">
-                <a class="navbar-item">
-                    Profile<br />
-                    {{ vm.username }}
-                </a>
-                <a class="navbar-item" href="{{ url_for("logout") }}">
-                    Log Out
-                </a>
-            </div>
+            <a class="navbar-item">
+                <span class="icon">
+                    <i class="fas fa-user"></i>
+                </span>
+                <strong>{{ username }}</strong>
+            </a>
+            <a class="navbar-item" href="{{ url_for("logout") }}">
+                <span class="icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                </span>
+                <span>Log Out</span>
+            </a>
         </div>
 
+        <div class="navbar-menu">
+            <div class="navbar-end">
 
-         <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true">You</span>
-      <span aria-hidden="true">are a </span>
-      <span aria-hidden="true">pirate</span>
-    </a>
-    </div>
-</nav>
+            </div>
+        </div>
+    </nav>
+{% endmacro %}
